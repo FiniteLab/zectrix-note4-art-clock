@@ -1,0 +1,4 @@
+[env]
+# audiopus_sys builds libopus from source but links it dynamically on linux-gnu by
+# default, which fails where no system libopus.so exists. Link the bundled copy instead.
+OPUS_STATIC = "1"

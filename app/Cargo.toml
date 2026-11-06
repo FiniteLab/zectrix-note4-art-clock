@@ -1,0 +1,29 @@
+[package]
+name = "note4-art-clock"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+zectrix-sdk = { path = "../zectrix-local-push-sdk" }
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "signal", "sync", "time"] }
+image = { version = "0.25", default-features = false, features = ["png", "jpeg"] }
+ab_glyph = "0.2"
+chrono = { version = "0.4", default-features = false, features = ["clock", "std", "serde"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+ureq = { version = "2", default-features = false, features = ["tls"] }
+tiny_http = "0.12"
+sha2 = "0.10"
+
+[[bin]]
+name = "art-clock"
+path = "src/bin/art-clock.rs"
+
+[[bin]]
+name = "catalog"
+path = "src/bin/catalog.rs"
+
+[[bin]]
+name = "preview"
+path = "src/bin/preview.rs"

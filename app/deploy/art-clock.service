@@ -1,0 +1,14 @@
+[Unit]
+Description=画时：NOTE4 名画时钟
+
+[Service]
+EnvironmentFile=%h/.config/art-clock.env
+ExecStart=%h/note4-art-clock/app/target/release/art-clock ${ART_CLOCK_DEVICE}
+# On SIGTERM the clock closes the device session and exits 0, so `systemctl stop` sticks.
+Restart=on-failure
+RestartSec=15
+StandardOutput=append:%h/note4-art-clock/art-clock.log
+StandardError=inherit
+
+[Install]
+WantedBy=default.target
