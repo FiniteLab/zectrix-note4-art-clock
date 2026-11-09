@@ -1,0 +1,3 @@
+[submodule "zectrix-local-push-sdk"]
+	path = zectrix-local-push-sdk
+	url = https://github.com/itopinion/zectrix-local-push-sdk.git
